@@ -11,6 +11,12 @@ function main()
     document.getElementById("scissors").addEventListener("click", function() {
         run_game("scissors");
     });
+
+    document.getElementById("jumbotron").addEventListener("click", function() {
+        window.location.reload(false);
+    });
+
+   
 }
 
 function run_game(player_selection) 
