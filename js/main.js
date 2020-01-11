@@ -1,4 +1,7 @@
-function main() 
+player = new Player("player", 0);
+computer = new Player("computer", 0);
+
+function load_listeners() 
 {
     document.getElementById("rock").addEventListener("click", function() {
         run_game("rock");
@@ -75,10 +78,37 @@ function add_result(result, computer_selection, player_selection)
     };
 
     let results = document.getElementById("results");
-
     let result_text = `<p class='${color_key[result]} m-0'>${result_key[result]} The player chose ${player_selection} and the computer chose ${computer_selection}</p>`;
+    
+    let player_score_bar = document.getElementById("player_score_bar");
+    let computer_score_bar = document.getElementById("computer_score_bar");
+
+    if (result_key[result] == "WIN") 
+    {
+        player.increment_score();
+        player_score_bar.innerHTML = "Score: " + player.get_score();
+        player_score_bar.style.width = player.get_score() * 10 + "%";
+        player_score_bar.classList.add("bg-primary");
+    }
+    else if (result_key[result] == "LOSE") 
+    {
+        computer.increment_score();
+        computer_score_bar.innerHTML = "Score: " + computer.get_score();
+        computer_score_bar.style.width = computer.get_score() * 10 + "%";
+        computer_score_bar.classList.add("bg-danger");
+    }
 
     results.innerHTML = result_text + results.innerHTML;
+
+    if (player.get_score() === 10) 
+    {
+        alert("You won the match!");
+        window.location.reload(false);
+    } else if (computer.get_score() === 10) 
+    {
+        alert("You lost the match!");
+        window.location.reload(false);
+    }
 }
 
-main();
+load_listeners();

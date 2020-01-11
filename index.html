@@ -15,15 +15,21 @@
         <div class="row m-3">
             <div class="col-sm text-center border border-primary rounded p-2 mr-1">
                 <p class="lead">Player</p>
-                <button type="button" class="btn btn-primary" id="rock">Rock</button>
-                <button type="button" class="btn btn-primary" id="paper">Paper</button>
-                <button type="button" class="btn btn-primary" id=scissors>Scissors</button>
+                <button type="button" class="btn btn-primary w-25" id="rock">Rock</button>
+                <button type="button" class="btn btn-primary w-25" id="paper">Paper</button>
+                <button type="button" class="btn btn-primary w-25" id=scissors>Scissors</button>
+                <div class="bg-secondary rounded mt-4 text-left text-white">
+                    <div class="rounded pl-2" id="player_score_bar"></div>
+                </div>
             </div>
             <div class="col-sm text-center border border-danger rounded p-2 ml-1">
                 <p class="lead">Computer</p>
-                <button type="button" class="btn btn-danger disabled">Rock</button>
-                <button type="button" class="btn btn-danger disabled">Paper</button>
-                <button type="button" class="btn btn-danger disabled">Scissors</button>
+                <button type="button" class="btn btn-danger disabled w-25">Rock</button>
+                <button type="button" class="btn btn-danger disabled w-25">Paper</button>
+                <button type="button" class="btn btn-danger disabled w-25">Scissors</button>
+                <div class="bg-secondary rounded mt-4 text-left text-white">
+                    <div class="rounded pl-2" id="computer_score_bar"></div>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -33,6 +39,7 @@
             </div>
         </div>
     </div>
+    <script src="js/player.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
