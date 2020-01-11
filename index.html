@@ -6,6 +6,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <div class="jumbotron">
+        <h1 class="display-3">Rock Paper Scissors</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm text-center border border-primary p-2">
+                <p>Player</p>
+                <button type="button" class="btn btn-primary" id="rock">Rock</button>
+                <button type="button" class="btn btn-primary" id="paper">Paper</button>
+                <button type="button" class="btn btn-primary" id=scissors>Scissors</button>
+            </div>
+            <div class="col-sm text-center border border-danger">
+                <p>Computer</p>
+                <button type="button" class="btn btn-danger disabled">Rock</button>
+                <button type="button" class="btn btn-danger disabled">Paper</button>
+                <button type="button" class="btn btn-danger disabled">Scissors</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm text-center">
+                <p>Result</p>
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
 </body>
 </html>
