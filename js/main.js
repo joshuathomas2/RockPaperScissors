@@ -15,8 +15,6 @@ function main()
     document.getElementById("jumbotron").addEventListener("click", function() {
         window.location.reload(false);
     });
-
-   
 }
 
 function run_game(player_selection) 
@@ -58,7 +56,6 @@ function run_game(player_selection)
     {
         add_result(0, computer_selection, player_selection);
     }
-
 }
 
 function add_result(result, computer_selection, player_selection)
