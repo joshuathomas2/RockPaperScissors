@@ -26,45 +26,53 @@ function run_game(player_selection)
         3: "scissors"
     };
 
-    results = document.getElementById("results");
-
     let computer_selection = selection_key[Math.floor((Math.random() * 3) + 1)];
-
-    console.log("PLAYER:", player_selection, "COMPUTER:", computer_selection);
 
     if (computer_selection === player_selection)
     {
-        console.log("DRAW");
+        add_result(2, computer_selection, player_selection);
     } 
     else if (computer_selection === "rock" && player_selection === "paper") 
     {
-        console.log("WIN");
+        add_result(1, computer_selection, player_selection);
     }
     else if (computer_selection === "rock" && player_selection === "scissors")
     {
-        console.log("LOSE");
+        add_result(0, computer_selection, player_selection);
     }
     else if (computer_selection === "paper" && player_selection === "rock")
     {
-        console.log("LOSE");
+        add_result(0, computer_selection, player_selection);
     }
     else if (computer_selection === "paper" && player_selection === "scissors") 
     {
-        console.log("WIN");
+        add_result(1, computer_selection, player_selection);
     }
     else if (computer_selection === "scissors" && player_selection === "rock") 
     {
-        console.log("WIN");
+        add_result(1, computer_selection, player_selection);
     }
     else if (computer_selection === "scissors" && player_selection === "paper") 
     {
-        console.log("LOSE");
+        add_result(0, computer_selection, player_selection);
     }
 
+}
 
+function add_result(result, computer_selection, player_selection)
+{
+    result_key =
+    {
+        0: "LOSE",
+        1: "WIN",
+        2: "DRAW"
+    };
 
+    results = document.getElementById("results");
 
-    
+    result_text = "<p>" + result_key[result] + " The player chose " + player_selection + " the computer chose " + computer_selection + "</p>";
+
+    results.innerHTML += result_text;
 }
 
 main();
