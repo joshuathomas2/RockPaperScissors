@@ -71,13 +71,13 @@ function add_result(result, computer_selection, player_selection)
     color_key = 
     {
         0: "bg-danger",
-        1: "bg-success",
-        2: "bg-info"
+        1: "bg-primary",
+        2: "bg-warning"
     };
 
     results = document.getElementById("results");
 
-    result_text = `<p class='${color_key[result]}'>${result_key[result]} The player chose ${player_selection} and the computer chose ${computer_selection}</p>`;
+    result_text = `<p class='${color_key[result]} m-0'>${result_key[result]} The player chose ${player_selection} and the computer chose ${computer_selection}</p>`;
 
     results.innerHTML = result_text + results.innerHTML;
 }
