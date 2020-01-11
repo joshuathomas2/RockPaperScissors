@@ -1,18 +1,14 @@
 function main() 
 {
-    rockButton = document.getElementById("rock");
-    paperButton = document.getElementById("paper");
-    scissorsButton = document.getElementById("scissors");
-    
-    rockButton.addEventListener("click", function() {
+    document.getElementById("rock").addEventListener("click", function() {
         run_game("rock");
     });
 
-    paperButton.addEventListener("click", function() {
+    document.getElementById("paper").addEventListener("click", function() {
         run_game("paper");
     });
 
-    scissorsButton.addEventListener("click", function() {
+    document.getElementById("scissors").addEventListener("click", function() {
         run_game("scissors");
     });
 }
