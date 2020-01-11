@@ -65,7 +65,7 @@ function add_result(result, computer_selection, player_selection)
 {
     let result_key =
     {
-        0: "LOSE",
+        0: "LOSS",
         1: "WIN",
         2: "DRAW"
     };
@@ -86,15 +86,15 @@ function add_result(result, computer_selection, player_selection)
     if (result_key[result] == "WIN") 
     {
         player.increment_score();
-        player_score_bar.innerHTML = "Score: " + player.get_score();
         player_score_bar.style.width = player.get_score() * 10 + "%";
+        player_score_bar.innerHTML = "Score: " + player.get_score();
         player_score_bar.classList.add("bg-primary");
     }
-    else if (result_key[result] == "LOSE") 
+    else if (result_key[result] == "LOSS") 
     {
         computer.increment_score();
-        computer_score_bar.innerHTML = "Score: " + computer.get_score();
         computer_score_bar.style.width = computer.get_score() * 10 + "%";
+        computer_score_bar.innerHTML = "Score: " + computer.get_score();
         computer_score_bar.classList.add("bg-danger");
     }
 
@@ -104,7 +104,8 @@ function add_result(result, computer_selection, player_selection)
     {
         alert("You won the match!");
         window.location.reload(false);
-    } else if (computer.get_score() === 10) 
+    } 
+    else if (computer.get_score() === 10) 
     {
         alert("You lost the match!");
         window.location.reload(false);

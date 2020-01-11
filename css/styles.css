@@ -3,11 +3,11 @@
 }
 
 #computer_score_bar {
-    width: 0%;
+    width: 10%;
     transition: width 0.25s;
 }
 
 #player_score_bar {
-    width: 0%;
+    width: 10%;
     transition: width 0.25s;
 }
